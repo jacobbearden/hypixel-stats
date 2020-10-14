@@ -23,17 +23,17 @@ jobs:
         run: |
           npm install
 
-      - name: Build
-        run: |
-          npm run build
-
       - name: Lint
         run: |
           npm run lint
 
-      - name: Test
+      #- name: Test
+      #  run: |
+      #    npm run test
+
+      - name: Build
         run: |
-          npm run test
+          npm run build
 
       - name: Deploy
         uses: feeloor/azure-static-website-deploy@master
