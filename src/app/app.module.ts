@@ -1,20 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule, Title } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouteNotFoundComponent } from './shared/components/route-not-found/route-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RouteNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    Title,
+    HttpClientModule
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
